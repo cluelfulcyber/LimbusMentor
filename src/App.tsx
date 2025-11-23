@@ -1,0 +1,33 @@
+import { Toaster } from "@/components/ui/toaster";
+import { Toaster as Sonner } from "@/components/ui/sonner";
+import { TooltipProvider } from "@/components/ui/tooltip";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { ThemeProvider } from "next-themes";
+import { LanguageProvider } from "@/contexts/LanguageContext";
+import Index from "./pages/Index";
+import Auth from "./pages/Auth";
+import Study from "./pages/Study";
+import History from "./pages/History";
+import NotFound from "./pages/NotFound";
+
+const App = () => (
+  <ThemeProvider attribute="class" defaultTheme="dark" enableSystem>
+    <LanguageProvider>
+      <TooltipProvider>
+        <Toaster />
+        <Sonner />
+        <BrowserRouter>
+          <Routes>
+            <Route path="/" element={<Index />} />
+            <Route path="/auth" element={<Auth />} />
+            <Route path="/study" element={<Study />} />
+            <Route path="/history" element={<History />} />
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </BrowserRouter>
+      </TooltipProvider>
+    </LanguageProvider>
+  </ThemeProvider>
+);
+
+export default App;
