@@ -63,7 +63,7 @@ LimbusMentor uses a modern full-stack architecture deployed on Railway:
 - **Database**: PostgreSQL
 - **ORM**: SQLAlchemy
 - **Authentication**: JWT tokens
-- **AI Integration**: OpenAI GPT-4
+- **AI Integration**: Grok API
 
 ---
 
